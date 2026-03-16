@@ -15,8 +15,8 @@ El objetivo es aplicar los conocimientos sobre **componentes de Astro**, **maque
 
 ### 🔗 Enlaces del proyecto
 
-- **Repositorio en GitHub:** [Agrega aquí la URL de tu repositorio](https://github.com/)
-- **Sitio desplegado (opcional):** [Agrega aquí la URL del proyecto desplegado, si usaste Vercel o Netlify](https://)
+- **Repositorio en GitHub:** [https://github.com/CesarAlvizo/loopstudios.git](https://github.com/CesarAlvizo/loopstudios.git)
+- **Sitio desplegado (opcional):** [https://loopstudios-ten-ashy.vercel.app/](https://loopstudios-ten-ashy.vercel.app/)
 
 ---
 
