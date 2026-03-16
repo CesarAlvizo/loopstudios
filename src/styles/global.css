@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-white: hsl(0, 0%, 100%);
+  --color-primary-black: hsl(0, 0%, 0%);
+  --color-neutral-gray-200: hsl(0, 0%, 85%);
+  --color-neutral-dark-gray: hsl(0, 0%, 55%);
+  --color-neutral-very-dark-gray: hsl(0, 0%, 41%);
+
+  --font-alata: "Alata", sans-serif;
+  --font-josefin: "Josefin Sans", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply font-alata text-[15px] bg-primary-white text-primary-black;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-josefin uppercase font-light;
+  }
+}
