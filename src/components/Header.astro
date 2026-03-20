@@ -1,0 +1,45 @@
+---
+
+---
+
+<header
+    class="absolute top-0 left-0 w-full z-50 p-6 md:px-40 md:py-16 flex items-center justify-between"
+>
+    <img
+        src="/images/logo.svg"
+        alt="Loopstudios Logo"
+        class="w-36 md:w-48 relative z-50"
+    />
+
+    <button id="menu-toggle" class="md:hidden relative z-50">
+        <img id="menu-icon" src="/images/icon-hamburger.svg" alt="Open Menu" />
+    </button>
+
+    <nav class="hidden md:flex space-x-8 text-primary-white font-alata">
+        {
+            ["About", "Careers", "Events", "Products", "Support"].map(
+                (item) => (
+                    <a href="#" class="relative group pb-2">
+                        {item}
+                        <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-primary-white transition-all duration-300 group-hover:w-full" />
+                    </a>
+                ),
+            )
+        }
+    </nav>
+</header>
+
+<!-- Mobile Menu Overlay -->
+<div
+    id="mobile-menu"
+    class="fixed inset-0 bg-primary-black text-primary-white px-6 py-48 z-40 hidden flex-col justify-center space-y-6 uppercase font-josefin text-3xl font-light tracking-widest"
+>
+    {
+        ["About", "Careers", "Events", "Products", "Support"].map((item) => (
+            <a href="#" class="w-max relative group">
+                {item}
+                <span class="absolute bottom-[-8px] left-1/2 -translate-x-1/2 w-0 h-[2px] bg-primary-white transition-all duration-300 group-hover:w-full" />
+            </a>
+        ))
+    }
+</div>

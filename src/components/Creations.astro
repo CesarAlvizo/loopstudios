@@ -1,0 +1,96 @@
+---
+const creations = [
+    {
+        title: "Deep earth",
+        imageMobile: "image-deep-earth.jpg",
+        imageDesktop: "image-deep-earth.jpg",
+    },
+    {
+        title: "Night arcade",
+        imageMobile: "image-night-arcade.jpg",
+        imageDesktop: "image-night-arcade.jpg",
+    },
+    {
+        title: "Soccer team VR",
+        imageMobile: "image-soccer-team.jpg",
+        imageDesktop: "image-soccer-team.jpg",
+    },
+    {
+        title: "The grid",
+        imageMobile: "image-grid.jpg",
+        imageDesktop: "image-grid.jpg",
+    },
+    {
+        title: "From up above VR",
+        imageMobile: "image-from-above.jpg",
+        imageDesktop: "image-from-above.jpg",
+    },
+    {
+        title: "Pocket borealis",
+        imageMobile: "image-pocket-borealis.jpg",
+        imageDesktop: "image-pocket-borealis.jpg",
+    },
+    {
+        title: "The curiosity",
+        imageMobile: "image-curiosity.jpg",
+        imageDesktop: "image-curiosity.jpg",
+    },
+    {
+        title: "Make it fisheye",
+        imageMobile: "image-fisheye.jpg",
+        imageDesktop: "image-fisheye.jpg",
+    },
+];
+---
+
+<section class="px-6 md:px-40 pb-24 md:pb-32">
+    <div
+        class="flex flex-col md:flex-row justify-between items-center mb-12 md:mb-20"
+    >
+        <h2
+            class="text-3xl md:text-4xl font-josefin uppercase text-primary-black text-center md:text-left mb-8 md:mb-0"
+        >
+            Our creations
+        </h2>
+        <button
+            class="hidden md:block uppercase tracking-widest border-2 border-primary-black px-12 py-3 hover:bg-primary-black hover:text-primary-white transition-colors duration-300 font-alata text-sm"
+            >See all</button
+        >
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        {
+            creations.map((item) => (
+                <a
+                    href="#"
+                    class="relative group cursor-pointer overflow-hidden block w-full aspect-[2/1] md:aspect-[3/7]"
+                >
+                    <picture class="absolute inset-0 z-0">
+                        <source
+                            media="(min-width: 768px)"
+                            srcset={`/images/desktop/${item.imageDesktop}`}
+                        />
+                        <img
+                            src={`/images/mobile/${item.imageMobile}`}
+                            alt={item.title}
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                    </picture>
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary-black/60 to-transparent z-10" />
+                    <div class="absolute inset-0 bg-primary-white/0 group-hover:bg-primary-white/70 transition-colors duration-500 z-20" />
+
+                    <h3 class="absolute bottom-6 left-6 md:bottom-8 md:left-8 text-white text-2xl md:text-3xl font-josefin uppercase font-light w-32 md:w-40 group-hover:text-black z-30 transition-colors duration-500 leading-none">
+                        {item.title}
+                    </h3>
+                </a>
+            ))
+        }
+    </div>
+
+    <div class="mt-8 flex justify-center md:hidden w-full">
+        <button
+            class="uppercase tracking-widest border-2 border-primary-black px-10 py-3 hover:bg-primary-black hover:text-primary-white transition-colors duration-300 font-alata w-full text-base"
+            >See all</button
+        >
+    </div>
+</section>

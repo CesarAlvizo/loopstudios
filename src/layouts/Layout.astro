@@ -1,0 +1,58 @@
+---
+import "../styles/global.css";
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="/images/favicon-32x32.png"
+		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body class="bg-primary-white">
+		<slot />
+
+		<!-- Script for Mobile Menu -->
+		<script>
+			const menuToggle = document.getElementById("menu-toggle");
+			const mobileMenu = document.getElementById("mobile-menu");
+			const menuIcon = document.getElementById(
+				"menu-icon",
+			) as HTMLImageElement;
+
+			menuToggle?.addEventListener("click", () => {
+				const isHidden = mobileMenu?.classList.contains("hidden");
+				if (isHidden) {
+					mobileMenu?.classList.remove("hidden");
+					mobileMenu?.classList.add("flex");
+					if (menuIcon) menuIcon.src = "/images/icon-close.svg";
+					document.body.style.overflow = "hidden"; // Prevent scrolling
+				} else {
+					mobileMenu?.classList.add("hidden");
+					mobileMenu?.classList.remove("flex");
+					if (menuIcon) menuIcon.src = "/images/icon-hamburger.svg";
+					document.body.style.overflow = ""; // Restore scrolling
+				}
+			});
+		</script>
+	</body>
+</html>
